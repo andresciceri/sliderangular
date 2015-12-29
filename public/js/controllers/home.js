@@ -1,27 +1,27 @@
-'use strict';
+"use strict";
 
 /**
  * @ngdoc function
  * @name conectateApp.controller:HomeCtrl
  * @description
  * # HomeCtrl
- * Controller of the conectateApp
+ * Controller of the slider home app
  */
 angular.module('sliderjs')
-  .controller('HomeCtrl', function ($scope, $http,$window,$route) {
+  .controller('HomeCtrl', function ($scope, $http,$window) {
 
   $scope.slides = [
-    {image: 'img/img00.jpg', description: 'Image 00'},
-    {image: 'img/img01.jpg', description: 'Image 01'},
-    {image: 'img/img02.jpg', description: 'Image 02'},
-    {image: 'img/img03.jpg', description: 'Image 03'}
+    {image: "img/img00.jpg", description: "Image 00"},
+    {image: "img/img01.jpg", description: "Image 01"},
+    {image: "img/img02.jpg", description: "Image 02"},
+    {image: "img/img03.jpg", description: "Image 03"}
   ];
 
-  $scope.direction = 'left';
+  $scope.direction = "left";
   $scope.currentIndex = 0;
 
   $scope.setCurrentSlideIndex = function (index) {
-      $scope.direction = (index > $scope.currentIndex) ? 'left' : 'right';
+      $scope.direction = (index > $scope.currentIndex) ? "left" : "right";
       $scope.currentIndex = index;
   };
 
@@ -30,23 +30,23 @@ angular.module('sliderjs')
   };
 
   $scope.prevSlide = function () {
-      $scope.direction = 'left';
+      $scope.direction = "left";
       $scope.currentIndex = ($scope.currentIndex < $scope.slides.length - 1) ? ++$scope.currentIndex : 0;
   };
 
   $scope.nextSlide = function () {
-      $scope.direction = 'right';
+      $scope.direction = "right";
       $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.slides.length - 1;
   };
 
-}).animation('.slide-animation', function () {
+}).animation(".slide-animation", function () {
   return {
-    beforeAddClass: function (element, className, done) {
+    beforeAddClass(element, className, done) {
         var scope = element.scope();
 
-        if (className == 'ng-hide') {
+        if (className === "ng-hide") {
             var finishPoint = element.parent().width();
-            if(scope.direction !== 'right') {
+            if(scope.direction !== "right") {
                 finishPoint = -finishPoint;
             }
             TweenMax.to(element, 0.5, {left: finishPoint, onComplete: done });
@@ -55,14 +55,14 @@ angular.module('sliderjs')
             done();
         }
     },
-    removeClass: function (element, className, done) {
+    removeClass(element, className, done) {
         var scope = element.scope();
 
-        if (className == 'ng-hide') {
-            element.removeClass('ng-hide');
+        if (className === "ng-hide") {
+            element.removeClass("ng-hide");
 
             var startPoint = element.parent().width();
-            if(scope.direction === 'right') {
+            if(scope.direction === "right") {
                 startPoint = -startPoint;
             }
 

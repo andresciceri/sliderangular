@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-var app = angular
+angular
   .module('sliderjs', [
     'ngAnimate',
     'ngCookies',
@@ -21,15 +21,15 @@ var app = angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/home.html',
-        controller: 'HomeCtrl',
-        controllerAs: 'home',
-        label: 'Inicio'
+        templateUrl: "views/home.html",
+        controller: "HomeCtrl",
+        controllerAs: "home",
+        label: "Inicio"
       })
       .when("/error", {
         templateUrl: "views/error.html"
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: "/"
       });
   });

@@ -8,7 +8,7 @@ var gulp = require('gulp'),
   livereload = require('gulp-livereload'),
   stylus = require('gulp-stylus');
 
-var browserSync = require('browser-sync').create();
+//var browserSync = require('browser-sync').create();
 
 gulp.task('stylus', function () {
   gulp.src('./public/css/*.styl')
