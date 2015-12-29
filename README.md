@@ -16,6 +16,9 @@ To install the app you have to keep the next steps:
 4. gulp
 
 The app run by default for the port 3000.
+## Demo
+You can see the demo on heroku
+[Slider Angular](https://sliderangular.herokuapp.com/)
 ## Contributing
 1. Fork it
 2. Create your feature branch 'git checkout -b my-branch'
