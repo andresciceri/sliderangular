@@ -1,0 +1,40 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    title= title
+    block css
+      link(rel='stylesheet' href='components/bootstrap/dist/css/bootstrap.css')
+      link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+      link(rel='stylesheet', href='/css/style.css')
+      // bower:css
+      // bower installed css files will go here...
+      // endinject
+      // inject:css
+      // built css files will go here...
+      // endinject
+    block js
+      if ENV_DEVELOPMENT
+        script(src='http://localhost:35729/livereload.js')
+  body(ng-app='sliderjs')
+    block content
+    // bower:js
+    // bower installed scripts will go here...
+    script(src='components/jquery/dist/jquery.js')
+    script(src='components/angular/angular.js')
+    script(src='components/angular-animate/angular-animate.js')
+    script(src='components/angular-bootstrap/ui-bootstrap-tpls.js')
+    script(src='components/bootstrap/dist/js/bootstrap.js')
+    script(src='components/angular-cookies/angular-cookies.js')
+    script(src='components/angular-resource/angular-resource.js')
+    script(src='components/angular-route/angular-route.js')
+    script(src='components/angular-sanitize/angular-sanitize.js')
+    script(src='components/angular-touch/angular-touch.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenMax.min.js')
+    // endinject
+    // inject:js
+    // app scripts will go here...
+    script(src='js/app.js')
+    script(src='js/controllers/home.js')
+    // endinject
