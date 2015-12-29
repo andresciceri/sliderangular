@@ -4,7 +4,6 @@
   "description": "Slider with Angular animate and TweenMax",
   "private": true,
   "scripts": {
-    "preinstall": "npm install",
     "start": "node ./bin/www",
     "postinstall": "bower install",
     "test": "gulp test"
